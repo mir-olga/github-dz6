@@ -62,7 +62,7 @@
         <div class="hero-container">
         <div class="container">
             <h1 class="hero-title">Эффективные решения для вашего бизнеса</h1>
-            <button type="button" class="hero-button" data-modal-open>Заказать услугу</button>
+            <button type="button" class="hero-button button" data-modal-open>Заказать услугу</button>
         </div>
       </div>  
       </section>
@@ -442,6 +442,25 @@
           </ul>
         </div>
 
+        <div class="footer-form-div">
+          <p class="footer-add">Подпишитесь на рассылку</p>
+          <div class="footer-form-email">
+            <form action="#" class="footer-form">
+              <input
+                      type="email"
+                      name="footer-user-email"
+                      id="footer-user-email"
+                      placeholder="E-mail"/>
+            </form>
+            <button type="submit" class="button subscribe-btn">
+              Подписаться
+              <svg class="icon-send">
+                <use href="./images/symbol-defs.svg#icon-send"></use>
+              </svg>
+            </button>
+          </div>
+        </div>
+
       </div>
     </footer>
      <!-- Модалка -->
@@ -523,15 +542,14 @@
          class="modal-checkbox visually-hidden"
         />
           <label for="modal-checkbox" class="check-text">
-            <span>
+            <span class="check-span">
               <svg class="check-icon" width="11" height="8">
-                <use href="./images/sprite.svg#icon-check"></use>
+                <use href="./images/symbol-defs.svg#icon-Vector"></use>
               </svg>
             </span>
-            Соглашаюсь с рассылкой и принимаю 
-                <a href="">Условия договора</a></label
-                    >
-                    <button type="submit" class="btn modal-btn">
+            Соглашаюсь с рассылкой и принимаю &nbsp;
+                <a href="" class="link-underline link">Условия договора</a></label>
+                    <button type="submit" class="button modal-btn">
                         Отправить
                     </button>
           </form>
