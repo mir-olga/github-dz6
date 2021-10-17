@@ -35,6 +35,16 @@ img {
 .header {
     border-bottom: 1px double #ECECEC;
 }
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    border: 0;
+    clip: rect(0 0 0 0);
+}
 .container{
     width: 1200px;
     margin: 0 auto;
@@ -106,7 +116,7 @@ img {
 
 .header-tel {
     margin-right: 10px;
-    fill: #757575;
+    fill: var(--secondary-title-color);
 }
 
 .header-tel-link {
@@ -178,26 +188,31 @@ img {
     text-transform: uppercase;
     color: #FFFFFF;
 }
-.hero-button {
-    display: flex;
-    justify-content:center;
-    margin: 0px auto;
-    padding: 10px 32px;
-
+.button {
     background-color:var(--accent-color);
     border:transparent;
-    border-radius: 5px;
+    border-radius: 4px;
     font-family: inherit;
     font-weight: bold;
     font-size: 16px;
     line-height: calc(30/16);
     letter-spacing: 0.06em;
     color: #FFFFFF;
+
+    transition-property: box-shadow;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
-.hero-button:focus,
-.hero-button:hover {
+.hero-button {
+    display: flex;
+    justify-content:center;
+    margin: 0px auto;
+    padding: 10px 32px;
+}
+.button:focus,
+.button:hover {
     cursor: pointer;
-    
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 /*-- Преимущества --*/
 
@@ -578,6 +593,46 @@ img {
 .footer-social-icon {
     fill:#fff;
 }
+.footer-form-div {
+    margin-left: 93px;
+}
+.footer-form-email {
+    display: flex;
+    justify-content: center;
+    height: 50px;
+    margin-top: 20px;
+}
+.footer-form {
+    display: flex;
+    margin-right: 12px;
+    flex-grow: 1;
+}
+.footer-form input{
+    padding: 15px 15px;
+    height: 50px;
+    width: 360px;
+    border-radius: 4px;
+    border: 1px solid var(--secondary-title-color);
+    background: transparent; /*прозрачный*/
+    outline: none;
+
+    color:var(--secondary-title-color);
+    font-size: 16px;
+    line-height: calc(20/16);
+    letter-spacing: 0.03em;
+}
+.subscribe-btn {
+    display: flex;
+    margin: 0 auto;
+    padding: 10px 28px;
+    align-items: center;
+}
+.icon-send {
+    width: 24px;
+    height: 24px;
+    fill:#fff;
+    margin-left: 10px;
+}
 /*------Модалка---*/
 .backdrop {
     position: fixed;
@@ -603,6 +658,7 @@ img {
 .modal {
     width: 528px;
     min-height: 581px;
+    padding: 40px;
     background-color: #ffffff;
     border-radius: 10px;
     position: relative;
@@ -628,5 +684,152 @@ img {
     width: 18px;
     height: 18px;
     fill: #000;
+
+    transition-property: fill;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.close-btn:hover .modal-close-icon,
+.close-btn:focus .modal-close-icon {
+    fill: var(--accent-color);
+    cursor: pointer;
+}
+.modal-title {
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: calc(23/20);
+    letter-spacing: 0.03em;
+    color: var(--primary-title-color);
+}
+.modal-field {
+    margin-bottom: 10px;
+}
+.input-label {
+    display: block;
+    margin-bottom: 4px;
+
+    font-size: 12px;
+    line-height: calc(14/12);
+    letter-spacing: 0.01em;
+    color: var(--secondary-title-color);
+}
+.input-wrapper {
+    display: block;
+    position: relative;
+}
+.modal-input {
+    width: 100%;
+    padding-left: 42px;
+    padding-right: 20px;
+    height: 45px;
+    border-radius: 4px;
+    border: 1px solid var(--secondary-title-color);
+    background: transparent; /*прозрачный*/
+    outline: none;
+
+    transition-property: border-color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.modal-input:focus {
+    border-color: var(--accent-color);
+    cursor: pointer;
 }
 
+.modal-input:focus + .input-icon {
+    fill: var(--accent-color);
+}
+.input-icon {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    fill: var(--primary-title-color);
+
+    transition-property: fill;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.modal-text-input {
+    width: 100%;
+    height: 120px;
+    border-radius: 4px;
+    resize: none; /*размеры поля не изменяются*/
+    border: 1px solid var(--secondary-title-color);
+    background: transparent;
+    padding: 12px 16px;
+    outline: none;
+
+    color:rgba(117, 117, 117, 0.5);
+    font-size: 12px;
+    line-height: calc(14/12);
+    letter-spacing: 0.01em;
+
+    transition-property: border-color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.modal-text-input:focus {
+    border-color: var(--accent-color);
+}
+.link-underline {
+    color: var(--accent-color);
+    text-decoration: underline;
+
+    /*transition-property: text-decoration;
+    transition-duration: 2050ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);   не працює...*/
+}
+.link-underline:hover,
+.link-underline:focus {
+    text-decoration: none;
+}
+
+.check-text {
+    display: flex;
+    margin-bottom: 15px;
+    position: relative;
+    align-items: center;
+    padding: 9px;
+
+    font-size: 14px;
+    line-height: calc(24/14);
+    letter-spacing: 0.03em;
+    color: var(--secondary-title-color);
+
+    transition-property: color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.check-span {
+    width: 16px;
+    height: 15px;
+    border: 2px solid var(--primary-title-color);
+    border-radius: 2px;
+    margin-right: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition-property: border;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.modal-checkbox:checked + .check-text span {
+    background-color: var(--accent-color);
+    border: none;
+}
+.check-icon {
+    fill: #fff;
+}
+.check-span:hover {
+    border: 2px solid var(--accent-color);
+    cursor: pointer;
+}
+.modal-btn {
+    display: block;
+    margin: 0 auto;
+    padding: 10px 50px;
+}
