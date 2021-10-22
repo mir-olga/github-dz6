@@ -3,6 +3,7 @@
     --secondary-title-color: #757575;
     --accent-color: #2196F3;
     --primary-icon-color:#AFB1B8;
+    --primary-modal-color: rgba(33, 33, 33, 0.2);
   }
 body {
     margin:0px;
@@ -638,7 +639,7 @@ img {
     position: fixed;
     width: 100vw;
     height: 100vh;
-    background-color: rgba(157, 164, 189, 0.6);
+    background-color: rgba(0, 0, 0, 0.2);
     top: 0;
     display: flex;
     align-items: center;
@@ -723,9 +724,9 @@ img {
     width: 100%;
     padding-left: 42px;
     padding-right: 20px;
-    height: 45px;
+    height: 40px;
     border-radius: 4px;
-    border: 1px solid var(--secondary-title-color);
+    border: 1px solid var(--primary-modal-color);
     background: transparent; /*прозрачный*/
     outline: none;
 
@@ -757,12 +758,12 @@ img {
     height: 120px;
     border-radius: 4px;
     resize: none; /*размеры поля не изменяются*/
-    border: 1px solid var(--secondary-title-color);
+    border: 1px solid var(--primary-modal-color);
     background: transparent;
     padding: 12px 16px;
     outline: none;
 
-    color:rgba(117, 117, 117, 0.5);
+    color:var(--primary-modal-color);
     font-size: 12px;
     line-height: calc(14/12);
     letter-spacing: 0.01em;
